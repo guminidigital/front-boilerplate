@@ -32,13 +32,11 @@ module.exports = {
 	 * actions[].dst: Destino dos arquivos
 	 */
 	copy: {
-		watch: [src+'/fonts/**/*.*', src+'/scripts/**/*.*'],
+		watch: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 		actions: [{
-			src: src+'/fonts/**/*.*',
-			dst: dst+'/fonts'
-		},{
-			src: src+'/vendor/**/*.*',
-			dst: dst+'/vendor'
+			src: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+			dst: dst+'/files',
+			dstDel: [dst+'/files/**/*.*', '!'+dst+'/files/images/**/*.*']
 		}]
 	},
 
