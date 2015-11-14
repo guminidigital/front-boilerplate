@@ -87,9 +87,9 @@ module.exports = {
 	 * dstFileName: Nome do arquivo no destino
 	 */
 	vendor: {
-		bundle: [],
+		watch: src+'/vendor/vendor.json',
 		dst: dst+'/vendor',
-		dstFileName: 'vendor.js'
+		src: src+'/vendor'
 	},
 
 
