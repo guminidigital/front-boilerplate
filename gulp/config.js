@@ -17,7 +17,7 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor', 'watch', 'browser-sync'],
+			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
 			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']			
 		}
 	},
