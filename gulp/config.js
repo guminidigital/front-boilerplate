@@ -66,15 +66,10 @@ module.exports = {
 	 * browserify.bundles: Lista de cada arquivo inicial que deve ser compilado
 	 */
 	scripts: {
+		srcPath: src+'/scripts',
 		src: src+'/scripts/**/*.js',
 		watch: src+'/scripts/**/*.js',
-		dst: dst+'/scripts',
-
-		browserify: {
-			bundles: [
-				src+'/scripts/main.js'
-			]
-		}
+		dst: dst+'/scripts'
 	},
 
 
