@@ -5,6 +5,7 @@ var config = require('../config');
 var nunjucksRender = require('gulp-nunjucks-render');
 var prettify = require('gulp-html-prettify');
 var handleErrors = require('../utils/handleErrors');
+var browserSync = require("browser-sync");
 
 
 function nunjucksRun(watch) {
@@ -17,7 +18,8 @@ function nunjucksRun(watch) {
 			indent_char: '	',
 			indent_size: 1
 		}))
-		.pipe(gulp.dest(config.nunjucks.dst));
+		.pipe(gulp.dest(config.nunjucks.dst))
+		.pipe(browserSync.reload({stream: true}));
 }
 
 

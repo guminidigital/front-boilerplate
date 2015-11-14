@@ -118,9 +118,9 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	nunjucks: {
-		baseRender: src+'/html',
-		src: [src+'/html/**/*.html', '!'+src+'/html/templates/**/*'],
-		watch: src+'/html/**/*.html',
+		baseRender: src+'/',
+		src: [src+'/**/*.html', '!'+src+'/html-parts/**/*', '!'+src+'/files/**/*', '!'+src+'/scripts/**/*', '!'+src+'/css/**/*', '!'+src+'/vendor/**/*'],
+		watch: src+'/**/*.html',
 		dst: dst
 	},
 
