@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var handleErrors = require('../utils/handleErrors');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var browserSync = require("browser-sync");
 
 gulp.task('scripts', function() {
 	gulp.src(config.scripts.src)
@@ -23,14 +24,13 @@ gulp.task('scripts-browserify', function() {
 
 		var src = config.scripts.browserify.bundles[x];
 		var arrPath = src.split('/');
-
-		console.log(src, arrPath[arrPath.length-1]);
 		
 		browserify(src)
 			.bundle()
 			.on('error', handleErrors)
 			.pipe(source(arrPath[arrPath.length-1]))
-			.pipe(gulp.dest(config.scripts.dst));
+			.pipe(gulp.dest(config.scripts.dst))
+			.pipe(browserSync.reload({stream: true}));
 	}
 });
 

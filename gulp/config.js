@@ -68,7 +68,7 @@ module.exports = {
 	scripts: {
 		src: src+'/scripts/**/*.js',
 		watch: src+'/scripts/**/*.js',
-		dst: dst+'/js',
+		dst: dst+'/scripts',
 
 		browserify: {
 			bundles: [
