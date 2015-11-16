@@ -1,17 +1,18 @@
 # Front Boilerplate
 
 ## Iniciando
-- Faça download ou clone o repositório *
+- Faça download ou clone o repositório
 - `npm install`
 - `gulp` para inicializar
 - Entre em http://localhost:3000
 
-* Se clonar, não esqueça de remover a pasta git antes de iniciar outro projeto: `rm -rf .git`
+(Se clonar, não esqueça de remover a pasta git antes de iniciar outro projeto: `rm -rf .git`)
 
 ## O que vem no pacote?
 - Nunjucks
 - Browserify
 - Less
+- Browsersync
 - Gulp
 
 ## Estutura do src/
