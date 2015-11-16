@@ -12,13 +12,13 @@ module.exports = {
 	 * dst: Pasta base do destino (sempre usar a variavel global dst)
 	 * tasks: Arrays das tasks do default.js que devem ser rodadas no Gulp
 	 */
-	base: { 
-		src: src, 
+	base: {
+		src: src,
 		dst: dst,
 
 		tasks: {
 			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
-			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']			
+			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']
 		}
 	},
 
@@ -97,9 +97,9 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	images: {
-		src: src+'/files/images/**/*.*',
-		watch: src+'/files/images/**/*.*',
-		dst: dst+'/files/images'
+		src: src+'/images/**/*.*',
+		watch: src+'/images/**/*.*',
+		dst: dst+'/images'
 	},
 
 
