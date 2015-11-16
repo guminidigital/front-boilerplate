@@ -1,33 +1,33 @@
 {
-  "name": "front-boilerplate",
-  "version": "1.0",
-  "description": "",
-  "main": "index.html",
-  "dependencies": {},
-  "devDependencies": {
-    "bower": "^1.6.5",
-    "browser-sync": "^2.9.11",
-    "browserify": "^12.0.1",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-html-prettify": "0.0.1",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-less": "^3.0.3",
-    "gulp-notify": "^2.2.0",
-    "gulp-nunjucks-render": "^1.0.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.4.2",
-    "gulp-watch": "^4.3.5",
-    "less-plugin-autoprefix": "^1.5.1",
-    "require-dir": "^0.3.0",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "engine": "node 4.2.2",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Gumini",
-  "license": "MIT",
-  "homepage": "https://github.com/guminidigital/front-boilerplate"
+	"name": "front-boilerplate",
+	"version": "1.0",
+	"description": "",
+	"main": "index.html",
+	"dependencies": {},
+	"devDependencies": {
+		"bower": "^1.6.5",
+		"browser-sync": "^2.9.11",
+		"browserify": "^12.0.1",
+		"del": "^2.0.2",
+		"gulp": "^3.9.0",
+		"gulp-concat": "^2.6.0",
+		"gulp-html-prettify": "0.0.1",
+		"gulp-imagemin": "^2.3.0",
+		"gulp-less": "^3.0.3",
+		"gulp-notify": "^2.2.0",
+		"gulp-nunjucks-render": "^1.0.0",
+		"gulp-sourcemaps": "^1.6.0",
+		"gulp-uglify": "^1.4.2",
+		"gulp-watch": "^4.3.5",
+		"less-plugin-autoprefix": "^1.5.1",
+		"require-dir": "^0.3.0",
+		"vinyl-source-stream": "^1.1.0"
+	},
+	"engine": "node 4.2.2",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Gumini",
+	"license": "MIT",
+	"homepage": "https://github.com/guminidigital/front-boilerplate"
 }
