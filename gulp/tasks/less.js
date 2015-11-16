@@ -7,6 +7,8 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var autoprefix = new LessPluginAutoPrefix({browsers: ["> 5% in BR", "ie >= 9", "not ie < 9"]});
 var config = require('../config');
 var handleErrors = require('../utils/handleErrors');
+var browserSync = require("browser-sync");
+
 
 gulp.task('less', function() {
 	gulp.src(config.less.src)
@@ -15,7 +17,8 @@ gulp.task('less', function() {
 			plugins: [autoprefix]
 		}).on('error', handleErrors))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(config.less.dst));
+		.pipe(gulp.dest(config.less.dst))
+		.pipe(browserSync.reload({stream: true}));
 });
 
 

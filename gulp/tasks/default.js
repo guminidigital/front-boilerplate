@@ -2,11 +2,22 @@
 
 var gulp = require("gulp");
 var config = require("../config");
+var browserSync = require("browser-sync");
 
-gulp.task('default', config.base.tasks.default, function() {
-	console.log("All done!");
+gulp.task('default', ['clean-dist'], function() {
+	console.log("Dist is clean");
+	gulp.start("default-run");
 });
 
-gulp.task('build', config.base.tasks.build, function() {
-	console.log("All done!");
+gulp.task('default-run', config.base.tasks.default, function() {
+	// Inicializa o browser sync
+	console.log("Inicializando o browser-sync");
+	browserSync.init(config.browserSync.conf);
 });
+
+gulp.task('build', ['clean-dist'], function() {
+	console.log("Dist is clean");
+	gulp.start("default-run");
+});
+
+gulp.task('build-run', config.base.tasks.build, function() {});

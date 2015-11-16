@@ -17,7 +17,7 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor', 'watch', 'browser-sync'],
+			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
 			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']			
 		}
 	},
@@ -32,13 +32,11 @@ module.exports = {
 	 * actions[].dst: Destino dos arquivos
 	 */
 	copy: {
-		watch: [src+'/fonts/**/*.*', src+'/scripts/**/*.*'],
+		watch: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 		actions: [{
-			src: src+'/fonts/**/*.*',
-			dst: dst+'/fonts'
-		},{
-			src: src+'/vendor/**/*.*',
-			dst: dst+'/vendor'
+			src: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+			dst: dst+'/files',
+			dstDel: [dst+'/files/**/*.*', '!'+dst+'/files/images/**/*.*']
 		}]
 	},
 
@@ -52,8 +50,8 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	less: {
-		src: [src+'/less/**/*.less', '!'+src+'/less/**/*.inc.less'],
-		watch: src+'/less/**/*.less',
+		src: [src+'/css/**/*.less', '!'+src+'/css/**/inc/*'],
+		watch: src+'/css/**/*.less',
 		dst: dst+'/css'
 	},
 
@@ -68,15 +66,10 @@ module.exports = {
 	 * browserify.bundles: Lista de cada arquivo inicial que deve ser compilado
 	 */
 	scripts: {
+		srcPath: src+'/scripts',
 		src: src+'/scripts/**/*.js',
 		watch: src+'/scripts/**/*.js',
-		dst: dst+'/js',
-
-		browserify: {
-			bundles: [
-				src+'/scripts/main.js'
-			]
-		}
+		dst: dst+'/scripts'
 	},
 
 
@@ -89,9 +82,9 @@ module.exports = {
 	 * dstFileName: Nome do arquivo no destino
 	 */
 	vendor: {
-		bundle: [],
+		watch: src+'/vendor/vendor.json',
 		dst: dst+'/vendor',
-		dstFileName: 'vendor.js'
+		src: src+'/vendor'
 	},
 
 
@@ -104,9 +97,9 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	images: {
-		src: src+'/img/**/*.*',
-		watch: src+'/img/**/*.*',
-		dst: dst+'/img'
+		src: src+'/files/images/**/*.*',
+		watch: src+'/files/images/**/*.*',
+		dst: dst+'/files/images'
 	},
 
 
@@ -120,9 +113,9 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	nunjucks: {
-		baseRender: src+'/html',
-		src: [src+'/html/**/*.html', '!'+src+'/html/templates/**/*'],
-		watch: src+'/html/**/*.html',
+		baseRender: src+'/',
+		src: [src+'/**/*.html', '!'+src+'/html-parts/**/*', '!'+src+'/files/**/*', '!'+src+'/scripts/**/*', '!'+src+'/css/**/*', '!'+src+'/vendor/**/*'],
+		watch: src+'/**/*.html',
 		dst: dst
 	},
 
