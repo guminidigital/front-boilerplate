@@ -17,8 +17,8 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
-			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']
+			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
+			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
 		}
 	},
 
@@ -99,6 +99,23 @@ module.exports = {
 	images: {
 		src: src+'/images/**/*.*',
 		watch: src+'/images/**/*.*',
+		dst: dst+'/images'
+	},
+
+
+	/**
+	 * sprites
+	 * Configurações relativas a task sprites
+	 *
+	 * src: Sources dos arquivos
+	 * css: Arquivos que vão conter todas as variaveis relacionadas com cada sprite
+	 * watch: Arquivos que devem ser monitorados
+	 * dst: Destino dos arquivos
+	 */
+	sprites: {
+		src: src+'/images/sprites',
+		css: src+'/css/inc/base',
+		watch: src+'/images/sprites/**/*.*',
 		dst: dst+'/images'
 	},
 
