@@ -17,8 +17,8 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
-			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
+			default: ['images', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'vendor', 'watch'],
+			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']
 			build: ['images-build', 'copy-build', 'html-build-nunjucks', 'css-build', 'scripts-build-browserify']
 		}
 	},
@@ -105,25 +105,8 @@ module.exports = {
 
 
 	/**
-	 * sprites
-	 * Configurações relativas a task sprites
-	 *
-	 * src: Sources dos arquivos
-	 * css: Arquivos que vão conter todas as variaveis relacionadas com cada sprite
-	 * watch: Arquivos que devem ser monitorados
-	 * dst: Destino dos arquivos
-	 */
-	sprites: {
-		src: src+'/images/sprites',
-		css: src+'/css/inc/base',
-		watch: src+'/images/sprites/**/*.*',
-		dst: dst+'/images'
-	},
-
-
-	/**
 	 * html
-	 * Configurações relativas a task do nunjucks
+	 * Configurações relativas a task do html
 	 *
 	 * baseRender: Configuração do nunjucks-render para determinar a base dos templates
 	 * src: Sources dos arquivos
