@@ -2,7 +2,7 @@
 
 var gulp = require("gulp");
 var config = require('../config');
-var sourcemaps = reuire('gulp-sourcemaps');
+var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var handleErrors = require('../utils/handleErrors');
@@ -27,6 +27,5 @@ gulp.task('scripts-browserify', function() {
 			.pipe(source(arrPath[arrPath.length-1]))
 			.pipe(gulp.dest(config.scripts.dst))
 			.pipe(browserSync.reload({stream: true}));
-
 	}
 });
