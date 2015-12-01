@@ -36,14 +36,14 @@ Em src/vendor está o arquivo vendor.json. Nele é declarado os bundles de libs 
 ```JSON
 {
 	"vendor.js": [
-		'jquery/jquery.min.js',
-		'downloaded/lib/lib.min.js'
+		"jquery/jquery.min.js",
+		"downloaded/lib/lib.min.js"
 	],
 
 	"outro-vendor.js": [
-		'jquery/jquery.min.js',
-		'jqueryui/jqueryui.min.js',
-		'downloaded/lib/lib.min.js'
+		"jquery/jquery.min.js",
+		"jqueryui/jqueryui.min.js",
+		"downloaded/lib/lib.min.js"
 	],
 }
 ```
