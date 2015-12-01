@@ -11,8 +11,8 @@ var fs = require("fs");
 
 gulp.task('watch', function() {
 	// SASS
-	watch(config.less.watch, function() {
-		gulp.start("less");
+	watch(config.css.watch, function() {
+		gulp.start("css");
 	});
 
 	// SCRIPTS

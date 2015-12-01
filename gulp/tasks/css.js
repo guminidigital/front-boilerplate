@@ -10,13 +10,13 @@ var handleErrors = require('../utils/handleErrors');
 var browserSync = require("browser-sync");
 
 
-gulp.task('less', function() {
-	gulp.src(config.less.src)
+gulp.task('css', function() {
+	gulp.src(config.css.src)
 		.pipe(sourcemaps.init())
 		.pipe(less({
 			plugins: [autoprefix]
 		}).on('error', handleErrors))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(config.less.dst))
+		.pipe(gulp.dest(config.css.dst))
 		.pipe(browserSync.reload({stream: true}));
 });

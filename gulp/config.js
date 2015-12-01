@@ -17,7 +17,7 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'copy', 'html-nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
+			default: ['images', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
 			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
 			build: ['images-build', 'copy-build', 'html-build-nunjucks']
 		}
@@ -50,7 +50,7 @@ module.exports = {
 	 * watch: Arquivos que devem ser monitorados
 	 * dst: Destino dos arquivos
 	 */
-	less: {
+	css: {
 		src: [src+'/css/**/*.less', '!'+src+'/css/**/inc/*'],
 		watch: src+'/css/**/*.less',
 		dst: dst+'/css'
