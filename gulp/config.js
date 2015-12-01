@@ -17,8 +17,8 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
-			build: ['clean-dist', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
+			default: ['images', 'sprites', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
+			build: ['clean-dist', 'copy', 'sprites', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']
 		}
 	},
 
@@ -116,7 +116,8 @@ module.exports = {
 		src: src+'/images/sprites',
 		css: src+'/css/inc/base',
 		watch: src+'/images/sprites/**/*.*',
-		dst: dst+'/images'
+		dst: dst+'/images',
+		dstRelative: '../images'
 	},
 
 

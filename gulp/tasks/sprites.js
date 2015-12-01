@@ -18,16 +18,20 @@ var gulp     	= require('gulp'),
 		var spriteData = gulp.src(config.sprites.src + '/' + pathSprite + '/*.png').pipe(spritesmith({
 			imgName: pathSprite + '.png',
 			cssName: pathSprite + '.less',
-			imgPath: config.sprites.dst,
+			imgPath: config.sprites.dstRelative + '/' + pathSprite + '.png',
 			cssFormat: 'less',
 			algorithm: 'binary-tree',
-			padding: 5
+			padding: 5,
+			cssTemplate: 'gulp/utils/sprite.template.handlebars', // a partir da raiz do projeto
+			cssHandlebarsHelpers: {
+				prefixo: "s-"+pathSprite+"-"
+			}
 		}))
 
 		spriteData.img.pipe(gulp.dest(config.sprites.dst));
 		spriteData.css.pipe(gulp.dest(config.sprites.css));
 	};
-	
+
 
 	gulp.task('sprites', function() {
 		var folders 		= getFolders(config.sprites.src),
