@@ -114,9 +114,9 @@ module.exports = {
 	 */
 	sprites: {
 		src: src+'/images/sprites',
-		css: src+'/css/inc/base',
+		css: src+'/css/inc/sprites',
 		watch: src+'/images/sprites/**/*.*',
-		dst: dst+'/images',
+		dst: dst+'/images/sprites',
 		dstRelative: '../images'
 	},
 
