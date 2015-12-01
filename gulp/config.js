@@ -17,8 +17,8 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'sprites', 'copy', 'nunjucks', 'less', 'scripts-browserify', 'vendor', 'watch'],
-			build: ['clean-dist', 'copy', 'sprites', 'nunjucks', 'less', 'scripts-browserify', 'images', 'vendor']
+			default: ['images', 'sprites', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'vendor', 'watch'],
+			build: ['images-build', 'sprites', 'copy-build', 'html-build-nunjucks', 'css-build', 'scripts-build-browserify', 'vendor-build']
 		}
 	},
 
@@ -32,9 +32,9 @@ module.exports = {
 	 * actions[].dst: Destino dos arquivos
 	 */
 	copy: {
-		watch: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+		watch: [src+'/files/**/*.*', '!'+src+'/files/**/empty.txt', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 		actions: [{
-			src: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+			src: [src+'/files/**/*.*', '!'+src+'/files/**/empty.txt', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 			dst: dst+'/files',
 			dstDel: [dst+'/files/**/*.*', '!'+dst+'/files/images/**/*.*']
 		}]
@@ -49,8 +49,8 @@ module.exports = {
 	 * watch: Arquivos que devem ser monitorados
 	 * dst: Destino dos arquivos
 	 */
-	less: {
-		src: [src+'/css/**/*.less', '!'+src+'/css/**/inc/*'],
+	css: {
+		src: [src+'/css/**/*.less', '!'+src+'/css/inc/**/*'],
 		watch: src+'/css/**/*.less',
 		dst: dst+'/css'
 	},
@@ -117,24 +117,25 @@ module.exports = {
 		css: src+'/css/inc/sprites',
 		watch: src+'/images/sprites/**/*.*',
 		dst: dst+'/images/sprites',
-		dstRelative: '../images'
+		dstRelative: '../images/sprites'
 	},
 
 
 	/**
-	 * nunjucks
-	 * Configurações relativas a task do nunjucks
+	 * html
+	 * Configurações relativas a task do html
 	 *
 	 * baseRender: Configuração do nunjucks-render para determinar a base dos templates
 	 * src: Sources dos arquivos
 	 * watch: Arquivos que devem ser monitorados
 	 * dst: Destino dos arquivos
 	 */
-	nunjucks: {
+	html: {
 		baseRender: src+'/',
 		src: [src+'/**/*.html', '!'+src+'/html-parts/**/*', '!'+src+'/files/**/*', '!'+src+'/scripts/**/*', '!'+src+'/css/**/*', '!'+src+'/vendor/**/*'],
 		watch: src+'/**/*.html',
-		dst: dst
+		dst: dst,
+		minifyDistHtml: false
 	},
 
 

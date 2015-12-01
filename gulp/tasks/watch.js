@@ -11,8 +11,8 @@ var fs = require("fs");
 
 gulp.task('watch', function() {
 	// SASS
-	watch(config.less.watch, function() {
-		gulp.start("less");
+	watch(config.css.watch, function() {
+		gulp.start("css");
 	});
 
 	// SCRIPTS
@@ -33,7 +33,6 @@ gulp.task('watch', function() {
 		}, 500);
 	});
 
-
 	// SPRITES
 	watch(config.sprites.watch, function(){
 		gulp.start("sprites");
@@ -41,8 +40,8 @@ gulp.task('watch', function() {
 
 
 	// NUNJUCKS
-	watch(config.nunjucks.watch, function() {
-		gulp.start("nunjucks-watch");
+	watch(config.html.watch, function() {
+		gulp.start("html-nunjucks-watch");
 	});
 
 

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "dependencies": {},
   "devDependencies": {
     "bower": "^1.6.5",
     "browser-sync": "^2.9.11",
@@ -12,8 +11,11 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-html-prettify": "0.0.1",
+    "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-minify-html": "^1.0.4",
     "gulp-notify": "^2.2.0",
     "gulp-nunjucks-render": "^1.0.0",
     "gulp-plumber": "^1.0.1",
@@ -24,6 +26,7 @@
     "less-plugin-autoprefix": "^1.5.1",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "engine": "node 4.2.2",
