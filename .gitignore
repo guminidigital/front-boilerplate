@@ -1,0 +1,7 @@
+node_modules
+dist/*
+src/vendor/*
+!src/vendor/downloaded
+!src/vendor/vendor.json
+src/css/inc/sprites
+npm-debug.log

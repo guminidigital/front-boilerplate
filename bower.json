@@ -1,0 +1,21 @@
+{
+  "name": "front-boilerplate",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Gumini"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/guminidigital/front-boilerplate",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+  }
+}
