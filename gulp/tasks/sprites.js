@@ -41,3 +41,5 @@ var gulp     	= require('gulp'),
 			loadSprites(folders[i]);
 		}
 	});
+
+	gulp.task('sprites-build', ['sprites']);

@@ -17,8 +17,26 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'sprites', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'vendor', 'watch'],
-			build: ['images-build', 'sprites', 'copy-build', 'html-build-nunjucks', 'css-build', 'scripts-build-browserify', 'vendor-build']
+			default: [
+				'images',
+				'sprites',
+				'copy',
+				'html-nunjucks',
+				'css',
+				'scripts-browserify',
+				'vendor',
+				'watch'
+			],
+
+			build: [
+				'images-build',
+				'sprites-build',
+				'copy-build',
+				'html-build-nunjucks',
+				'css-build',
+				'scripts-build-browserify',
+				'vendor-build'
+			]
 		}
 	},
 
