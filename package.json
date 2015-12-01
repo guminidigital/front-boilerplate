@@ -27,6 +27,7 @@
     "less-plugin-autoprefix": "^1.5.1",
     "path": "^0.12.7",
     "require-dir": "^0.3.0",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "engine": "node 4.2.2",
