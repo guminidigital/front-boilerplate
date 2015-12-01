@@ -24,16 +24,17 @@ gulp.task('clean-copy-folder', function() {
 });
 
 
-
 gulp.task('copy', ['copy-do'], function() {
 	clearTimeout(_timeoutBSReload);
 	_timeoutBSReload = setTimeout(function() {
 		browserSync.reload();
 	}, 2000);
-	
+
 });
 
 
 gulp.task('copy-clean', ['clean-copy-folder'], function() {
 	gulp.start("copy")
-})
+});
+
+gulp.task('copy-build', ['copy-do']);
