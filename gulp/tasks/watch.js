@@ -34,12 +34,6 @@ gulp.task('watch', function() {
 	});
 
 
-	// SPRITES
-	watch(config.sprites.watch, function(){
-		gulp.start("sprites");
-	});
-
-
 	// NUNJUCKS
 	watch(config.nunjucks.watch, function() {
 		gulp.start("nunjucks-watch");
