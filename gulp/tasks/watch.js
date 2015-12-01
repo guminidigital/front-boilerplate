@@ -33,6 +33,11 @@ gulp.task('watch', function() {
 		}, 500);
 	});
 
+	// SPRITES
+	watch(config.sprites.watch, function(){
+		gulp.start("sprites");
+	});
+
 
 	// NUNJUCKS
 	watch(config.html.watch, function() {
