@@ -19,7 +19,7 @@ module.exports = {
 		tasks: {
 			default: ['images', 'copy', 'html-nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
 			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
-			build: ['images-build', 'html-build-nunjucks']
+			build: ['images-build', 'copy-build', 'html-build-nunjucks']
 		}
 	},
 
@@ -33,9 +33,9 @@ module.exports = {
 	 * actions[].dst: Destino dos arquivos
 	 */
 	copy: {
-		watch: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+		watch: [src+'/files/**/*.*', '!'+src+'/files/**/empty.txt', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 		actions: [{
-			src: [src+'/files/**/*.*', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
+			src: [src+'/files/**/*.*', '!'+src+'/files/**/empty.txt', '!'+src+'/files/**/.DS_Store', '!'+src+'/files/images/**/*.*'],
 			dst: dst+'/files',
 			dstDel: [dst+'/files/**/*.*', '!'+dst+'/files/images/**/*.*']
 		}]
