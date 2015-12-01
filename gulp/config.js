@@ -19,7 +19,7 @@ module.exports = {
 		tasks: {
 			default: ['images', 'copy', 'html-nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
 			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
-			build: ['html-build-nunjucks']
+			build: ['images-build', 'html-build-nunjucks']
 		}
 	},
 
