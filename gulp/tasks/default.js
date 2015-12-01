@@ -17,7 +17,7 @@ gulp.task('default-run', config.base.tasks.default, function() {
 
 gulp.task('build', ['clean-dist'], function() {
 	console.log("Dist is clean");
-	gulp.start("default-run");
+	gulp.start("build-run");
 });
 
 gulp.task('build-run', config.base.tasks.build, function() {});

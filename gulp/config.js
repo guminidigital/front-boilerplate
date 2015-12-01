@@ -18,7 +18,8 @@ module.exports = {
 
 		tasks: {
 			default: ['images', 'copy', 'html-nunjucks', 'less', 'scripts-browserify', 'sprites', 'vendor', 'watch'],
-			build: ['clean-dist', 'copy', 'html-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
+			// build: ['clean-dist', 'copy', 'html-build-nunjucks', 'less', 'scripts-browserify', 'sprites', 'images', 'vendor']
+			build: ['html-build-nunjucks']
 		}
 	},
 
@@ -133,7 +134,8 @@ module.exports = {
 		baseRender: src+'/',
 		src: [src+'/**/*.html', '!'+src+'/html-parts/**/*', '!'+src+'/files/**/*', '!'+src+'/scripts/**/*', '!'+src+'/css/**/*', '!'+src+'/vendor/**/*'],
 		watch: src+'/**/*.html',
-		dst: dst
+		dst: dst,
+		minifyDistHtml: false
 	},
 
 
