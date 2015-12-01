@@ -50,7 +50,7 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	css: {
-		src: [src+'/css/**/*.less', '!'+src+'/css/**/inc/*'],
+		src: [src+'/css/**/*.less', '!'+src+'/css/inc/**/*'],
 		watch: src+'/css/**/*.less',
 		dst: dst+'/css'
 	},

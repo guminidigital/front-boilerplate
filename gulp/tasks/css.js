@@ -9,10 +9,12 @@ var config = require('../config');
 var handleErrors = require('../utils/handleErrors');
 var browserSync = require("browser-sync");
 var minifyCSS = require('gulp-minify-css');
+var plumber = require('gulp-plumber');
 
 
 gulp.task('css', function() {
 	gulp.src(config.css.src)
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(less({
 			plugins: [autoprefix]
@@ -24,6 +26,7 @@ gulp.task('css', function() {
 
 gulp.task('css-build', function() {
 	gulp.src(config.css.src)
+		.pipe(plumber())
 		.pipe(less({
 			plugins: [autoprefix]
 		}).on('error', handleErrors))
