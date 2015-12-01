@@ -8,6 +8,7 @@ var autoprefix = new LessPluginAutoPrefix({browsers: ["> 5% in BR", "ie >= 9", "
 var config = require('../config');
 var handleErrors = require('../utils/handleErrors');
 var browserSync = require("browser-sync");
+var minifyCSS = require('gulp-minify-css');
 
 
 gulp.task('css', function() {
@@ -19,4 +20,13 @@ gulp.task('css', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(config.css.dst))
 		.pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('css-build', function() {
+	gulp.src(config.css.src)
+		.pipe(less({
+			plugins: [autoprefix]
+		}).on('error', handleErrors))
+		.pipe(minifyCSS())
+		.pipe(gulp.dest(config.css.dst))
 });
