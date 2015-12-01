@@ -97,8 +97,8 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	images: {
-		src: src+'/images/**/*.*',
-		watch: src+'/images/**/*.*',
+		src: [src+'/images/**/*.*', '!'+src+'/images/sprites/**/*.*'],
+		watch: [src+'/images/**/*.*', '!'+src+'/images/sprites/**/*.*'],
 		dst: dst+'/images'
 	},
 
