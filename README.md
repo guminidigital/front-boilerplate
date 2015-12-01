@@ -94,3 +94,6 @@ Cada arquivo na raiz de /src/scripts é compilado pelo Browserify e copiado com 
 
 ## CSS e Less
 Todos os arquivos do less compilados estarão em /src/css. Arquivos dentro de /src/css/inc não são compilados nem copiados para a pasta /dist/. Idealmente, os arquivos em /src/css somente devem ter declarações `@import` para arquivos que estejam em /src/css/inc
+
+## Build
+`gulp build` gera a pasta ./dist/
