@@ -20,10 +20,3 @@ gulp.task('less', function() {
 		.pipe(gulp.dest(config.less.dst))
 		.pipe(browserSync.reload({stream: true}));
 });
-
-
-gulp.task('less-dist', function() {
-	gulp.src(config.less.src)
-		.pipe(less({outputStyle: 'compressed'}).on('error', handleErrors))
-		.pipe(gulp.dest(config.less.dst));
-});
