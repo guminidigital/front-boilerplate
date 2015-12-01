@@ -41,8 +41,8 @@ gulp.task('watch', function() {
 
 
 	// NUNJUCKS
-	watch(config.nunjucks.watch, function() {
-		gulp.start("nunjucks-watch");
+	watch(config.html.watch, function() {
+		gulp.start("html-nunjucks-watch");
 	});
 
 
