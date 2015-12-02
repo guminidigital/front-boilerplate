@@ -1,7 +1,7 @@
 # Front Boilerplate
 
 ## Iniciando
-- Faça download ou clone o repositório
+- Faça [download](https://github.com/guminidigital/front-boilerplate/releases) ou clone o repositório
 - `npm install`
 - `gulp` para inicializar
 - Entre em http://localhost:3000
