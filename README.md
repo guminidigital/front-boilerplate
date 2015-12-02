@@ -1,7 +1,7 @@
 # Front Boilerplate
 
 ## Iniciando
-- Faça download ou clone o repositório
+- Faça [download](https://github.com/guminidigital/front-boilerplate/releases) ou clone o repositório
 - `npm install`
 - `gulp` para inicializar
 - Entre em http://localhost:3000
@@ -16,18 +16,20 @@
 - Gulp
 
 ## Estutura do src/
-| Pasta                 | Descrição                                                                                       |
-|-----------------------|-------------------------------------------------------------------------------------------------|
-| src                   | Source do projeto, representa a raiz do projeto na pasta dist                                   |
-| src/css               | Arquivos LESS                                                                                   |
-| src/css/inc           | Arquivos de include do LESS que não são compilados nem copiados para `dist`                     |
-| src/files/*           | Arquivos estáticos que são copiados diretamente para dist, sem tratamento. Ex.: fontes e vídeos |
-| src/images/           | Arquivos de imagens                                                                             |
-| src/html-parts/       | Includes e extends do nunjucks                                                                  |
-| src/scripts/          | Arquivos JS                                                                                     |
-| src/scripts/inc       | Arquivos de include (require) do javascript. Não são compilados nem copiados para `dist`.       |
-| src/vendor            | Pasta que contem as libs instaladas pelo Bower                                                  |
-| src/vendor/downloaded | Pasta que contem libs baixadas, que não fazem parte do Bower                                    |
+| Pasta                         | Descrição                                                                                       |
+|-------------------------------|-------------------------------------------------------------------------------------------------|
+| src                           | Source do projeto, representa a raiz do projeto na pasta dist                                   |
+| src/css                       | Arquivos LESS                                                                                   |
+| src/css/inc                   | Arquivos de include do LESS que não são compilados nem copiados para `dist`                     |
+| _src/css/inc/sprites_         | Arquivos gerados pela task de sprites no GULP. Não é _trackeado_ pelo git.                      |
+| src/files/*                   | Arquivos estáticos que são copiados diretamente para dist, sem tratamento. Ex.: fontes e vídeos |
+| src/html-parts/               | Includes e extends do nunjucks                                                                  |
+| src/images/                   | Arquivos de imagens                                                                             |
+| src/images/sprites/\*\*/*.png | Arquivos PNG soltos para gerar o sprite pelo GULP                                               |
+| src/scripts/                  | Arquivos JS                                                                                     |
+| src/scripts/inc               | Arquivos de include (require) do javascript. Não são compilados nem copiados para `dist`.       |
+| src/vendor                    | Pasta que contem as libs instaladas pelo Bower                                                  |
+| src/vendor/downloaded         | Pasta que contem libs baixadas, que não fazem parte do Bower                                    |
 
 
 ## Vendor e o vendor.json
@@ -36,15 +38,51 @@ Em src/vendor está o arquivo vendor.json. Nele é declarado os bundles de libs 
 ```JSON
 {
 	"vendor.js": [
-		'jquery/jquery.min.js',
-		'downloaded/lib/lib.min.js'
+		"jquery/jquery.min.js",
+		"downloaded/lib/lib.min.js"
 	],
 
 	"outro-vendor.js": [
-		'jquery/jquery.min.js',
-		'jqueryui/jqueryui.min.js',
-		'downloaded/lib/lib.min.js'
+		"jquery/jquery.min.js",
+		"jqueryui/jqueryui.min.js",
+		"downloaded/lib/lib.min.js"
 	],
+}
+```
+
+## Sprites
+Os sprites são gerados automaticamente pelo GULP, com o [gulp.spritesmith](https://github.com/twolfson/gulp.spritesmith), ao criar pastas dentro de src/images/sprites/{nome-do-sprite}/*.png. Isso irá unificar todos os arquivos que estiverem dentro desta pasta em dist/images/sprites/{nome-do-sprite}.png.
+
+O GULP também gera aquivos .less em src/css/inc/sprites/{nome-do-sprite}.less, que contém as variáveis de uso do sprite e alguns mixins para facilitar a utilização do sprite. Tanto os mixins, quanto as variáveis tem o prefixo _s-{nome-do-sprite}_:
+
+- Mixins: .s-{nome-do-sprite}-sprite(@sprite)
+- Variáveis: @s-{nome-do-sprite}-{nome-do-icone}
+
+### Utilização
+No arquivo less, chamar o mixin .s-{nome-do-sprite}-sprite passando a variável @s-{nome-do-sprite}-{nome-do-icone}. Ex.: Sprite da home, pegando o logo: 
+
+``` css
+.logo {
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	.s-home-sprite(@s-home-logo);
+}
+```
+
+A saída no CSS fica
+
+```css
+.logo {
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-image: url(../images/sprites/home.png);
+	background-position: -124px -12px;
+	width: 120px;
+	height: 40px;
 }
 ```
 
@@ -56,3 +94,6 @@ Cada arquivo na raiz de /src/scripts é compilado pelo Browserify e copiado com 
 
 ## CSS e Less
 Todos os arquivos do less compilados estarão em /src/css. Arquivos dentro de /src/css/inc não são compilados nem copiados para a pasta /dist/. Idealmente, os arquivos em /src/css somente devem ter declarações `@import` para arquivos que estejam em /src/css/inc
+
+## Build
+`gulp build` gera a pasta ./dist/

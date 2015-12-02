@@ -17,8 +17,26 @@ module.exports = {
 		dst: dst,
 
 		tasks: {
-			default: ['images', 'copy', 'html-nunjucks', 'css', 'scripts-browserify', 'vendor', 'watch'],
-			build: ['images-build', 'copy-build', 'html-build-nunjucks', 'css-build', 'scripts-build-browserify', 'vendor-build']
+			default: [
+				'images',
+				'sprites',
+				'copy',
+				'html-nunjucks',
+				'css',
+				'scripts-browserify',
+				'vendor',
+				'watch'
+			],
+
+			build: [
+				'images-build',
+				'sprites-build',
+				'copy-build',
+				'html-build-nunjucks',
+				'css-build',
+				'scripts-build-browserify',
+				'vendor-build'
+			]
 		}
 	},
 
@@ -97,9 +115,27 @@ module.exports = {
 	 * dst: Destino dos arquivos
 	 */
 	images: {
-		src: src+'/images/**/*.*',
-		watch: src+'/images/**/*.*',
+		src: [src+'/images/**/*.*', '!'+src+'/images/sprites/**/*.*'],
+		watch: [src+'/images/**/*.*', '!'+src+'/images/sprites/**/*.*'],
 		dst: dst+'/images'
+	},
+
+
+	/**
+	 * sprites
+	 * Configurações relativas a task sprites
+	 *
+	 * src: Sources dos arquivos
+	 * css: Arquivos que vão conter todas as variaveis relacionadas com cada sprite
+	 * watch: Arquivos que devem ser monitorados
+	 * dst: Destino dos arquivos
+	 */
+	sprites: {
+		src: src+'/images/sprites',
+		css: src+'/css/inc/sprites',
+		watch: src+'/images/sprites/**/*.*',
+		dst: dst+'/images/sprites',
+		dstRelative: '../images/sprites'
 	},
 
 
