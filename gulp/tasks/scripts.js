@@ -13,6 +13,7 @@ var browserSync = require("browser-sync");
 var fs = require("fs");
 var path = require('path');
 var gulpif = require('gulp-if');
+var shell = require('gulp-shell');
 
 
 function scriptsDoBrowserify(buildMode) {
@@ -42,3 +43,6 @@ gulp.task('scripts-browserify', function() {
 gulp.task('scripts-build-browserify', function() {
 	scriptsDoBrowserify(true);
 });
+
+
+gulp.task('scripts-documentation', shell.task(['./node_modules/jsdoc/jsdoc.js ' + config.scripts.srcPath + ' -d ' + config.scripts.docs + ' -r'], {verbose: true}));

@@ -24,6 +24,7 @@ module.exports = {
 				'html-nunjucks',
 				'css',
 				'scripts-browserify',
+				'scripts-documentation',
 				'vendor',
 				'watch'
 			],
@@ -87,7 +88,8 @@ module.exports = {
 		srcPath: src+'/scripts',
 		src: src+'/scripts/**/*.js',
 		watch: src+'/scripts/**/*.js',
-		dst: dst+'/scripts'
+		dst: dst+'/scripts',
+		docs: './docs'
 	},
 
 

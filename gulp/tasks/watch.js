@@ -18,6 +18,7 @@ gulp.task('watch', function() {
 	// SCRIPTS
 	watch(config.scripts.watch, function() {
 		gulp.start("scripts-browserify");
+		gulp.start("scripts-documentation");
 	});
 
 	// IMAGES
