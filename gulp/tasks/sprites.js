@@ -17,9 +17,9 @@ var gulp     	= require('gulp'),
 	function loadSprites(pathSprite){
 		var spriteData = gulp.src(config.sprites.src + '/' + pathSprite + '/*.png').pipe(spritesmith({
 			imgName: pathSprite + '.png',
-			cssName: pathSprite + '.less',
+			cssName: pathSprite + '.scss',
 			imgPath: config.sprites.dstRelative + '/' + pathSprite + '.png',
-			cssFormat: 'less',
+			cssFormat: 'scss',
 			algorithm: 'binary-tree',
 			padding: 5,
 			cssTemplate: 'gulp/utils/sprite.template.handlebars', // a partir da raiz do projeto
