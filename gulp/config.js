@@ -60,16 +60,16 @@ module.exports = {
 
 
 	/**
-	 * less
-	 * Configurações relativas ao less
+	 * sass
+	 * Configurações relativas ao sass
 	 *
 	 * src: Sources dos arquivos
 	 * watch: Arquivos que devem ser monitorados
 	 * dst: Destino dos arquivos
 	 */
 	css: {
-		src: [src+'/css/**/*.less', '!'+src+'/css/inc/**/*'],
-		watch: src+'/css/**/*.less',
+		src: [src+'/css/**/*.scss', '!'+src+'/css/inc/**/*'],
+		watch: src+'/css/**/*.scss',
 		dst: dst+'/css'
 	},
 
