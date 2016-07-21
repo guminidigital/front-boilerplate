@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.html",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
     "bower": "^1.6.5",
     "browser-sync": "^2.9.11",
     "browserify": "^12.0.1",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-html-prettify": "0.0.1",
     "gulp-if": "^2.0.0",
@@ -28,6 +31,9 @@
     "require-dir": "^0.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "babel": {
+    "presets": ["es2015","stage-0"]
   },
   "engine": "node 4.2.2",
   "scripts": {

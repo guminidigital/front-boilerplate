@@ -87,7 +87,8 @@ module.exports = {
 		srcPath: src+'/scripts',
 		src: src+'/scripts/**/*.js',
 		watch: src+'/scripts/**/*.js',
-		dst: dst+'/scripts'
+		dst: dst+'/scripts',
+		dstEs5: dst+'/scripts/es5'
 	},
 
 
