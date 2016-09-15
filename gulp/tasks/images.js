@@ -8,7 +8,7 @@ var del = require('del');
 var browserSync = require("browser-sync");
 
 gulp.task('images', function() {
-	gulp.src(config.images.src)
+	return gulp.src(config.images.src)
 		.pipe(plumber())
 		.pipe(gulp.dest(config.images.dst))
 		.pipe(browserSync.reload({stream: true}));
@@ -22,9 +22,8 @@ gulp.task('images-clean', function() {
 
 
 gulp.task("images-build", function() {
-	gulp.src(config.images.src)
+	return gulp.src(config.images.src)
 		.pipe(plumber())
 		.pipe(imagemin())
 		.pipe(gulp.dest(config.images.dst));
 })
-
